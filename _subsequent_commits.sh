@@ -1,6 +1,3 @@
-echo "** ls -la ***"
-ls -la
-
 echo "** git status ***"
 git status
 

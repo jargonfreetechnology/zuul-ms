@@ -23,6 +23,7 @@
 	<link rel="stylesheet" href="css/button.css">
 	<link rel="stylesheet" href="css/checkbox-radiobtn.css">
 	<link rel="stylesheet" href="css/container.css">
+	<link rel="stylesheet" href="css/file-upload.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/form.css">
@@ -67,15 +68,17 @@
 							<th>Hobbies</th>
 							<th>Languages</th>
 							<th>Gender</th>
+							<th>Photo</th>
 						</tr>
 						<c:forEach items="${userList}" var="user" varStatus="row">
-							<tr id="row_${row.count}" onclick="showUserUpdateDlg('${user.userId}', '${user.name}', '${user.address}', '${user.diet}', '${user.hobbies}', '${user.languages}', '${user.gender}');">
+							<tr id="row_${row.count}" onclick="showUserUpdateDlg('${user.userId}', '${user.name}', '${user.address}', '${user.diet}', '${user.hobbies}', '${user.languages}', '${user.gender}', '${user.base64EncodedImg}');">
 								<td class="medium-font">${user.name}</td>
 								<td class="small-font">${user.address}</td>
 								<td class="medium-font">${user.diet}</td>
 								<td class="medium-font">${user.hobbies}</td>
 								<td class="medium-font">${user.languages}</td>
 								<td class="medium-font">${user.gender}</td>
+								<td class="medium-font, no-cursor" > <img class="img-height" src="data:image/jpeg;base64,${user.base64EncodedImg}"/> </td>
 							</tr>
 						</c:forEach>
 					</table>
@@ -85,7 +88,7 @@
 			
 			<div class="user-update-dlg">
 				<div>
-					<form id="upForm" action="update" method="POST">
+					<form id="upForm" action="update" method="POST" enctype="multipart/form-data">
 
 						<label for="textbox-id">Name</label><input type="text" id="textbox-id" name="name" placeholder="Please enter the name">
 						<br><br>
@@ -117,6 +120,12 @@
 						<input type="radio" id="radio2" name="gender" value="Female" /><label for="radio2">Female</label>
 						<input type="radio" id="radio3" name="gender" value="Neutral" /><label for="radio3">Neutral</label>
 						<br><br>
+						
+						<label class="file-upload-label">
+						  <input class="file-upload-input" type="file" name="file">
+						  <img class="img-height templateImg" src=""/>
+						</label>
+				        <br><br>
 						<input type="hidden" id="userId" name="userId" />
 						<button type="reset" value="Reset" class="half-btn">Reset</button>
 						<button type="submit" value="Submit" class="half-btn">Submit</button>

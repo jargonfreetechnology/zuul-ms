@@ -27,6 +27,7 @@
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/form.css">
 	<link rel="stylesheet" href="css/inputbox.css">
+	<link rel="stylesheet" href="css/login.css">
 	<link rel="stylesheet" href="css/mask.css">
 	<link rel="stylesheet" href="css/select.css">
 	<link rel="stylesheet" href="css/table.css">
@@ -45,9 +46,9 @@
 				<span style="color: #40E0D0;">R</span>
 				<span style="color: #00BFFF;">U</span>
 				<span style="color: red;">D</span>
-				<sub class="subclass" style="color: #40E0D0;">read page</sub>
+				<sub class="subclass" style="color: black;">home page</sub>
 			</span>
-		</div>
+		</div>		
 		<div id="menu-div" ></div>
 	</header>
 	
@@ -56,32 +57,7 @@
 	<div id="main">
 
 		<article>
-			<form id="readForm" method="GET">
-
-				<table>
-					<tr>
-						<th>Name</th>
-						<th>Address</th>
-						<th>Diet</th>
-						<th>Hobbies</th>
-						<th>Languages</th>
-						<th>Gender</th>
-						<th>Photo</th>
-					</tr>
-					<c:forEach items="${userList}" var="user" varStatus="row">
-						<tr id="row_${row.count}" >
-							<td class="medium-font, no-cursor">${user.name}</td>
-							<td class="small-font, no-cursor">${user.address}</td>
-							<td class="medium-font, no-cursor">${user.diet}</td>
-							<td class="medium-font, no-cursor">${user.hobbies}</td>
-							<td class="medium-font, no-cursor">${user.languages}</td>
-							<td class="medium-font, no-cursor">${user.gender}</td>
-							<td class="medium-font, no-cursor" > <img class="img-height" src="data:image/jpeg;base64,${user.base64EncodedImg}"/> </td>
-						</tr>
-					</c:forEach>
-				</table>
-
-			</form>
+			Error	
 		</article>
 
 		<nav></nav>
@@ -94,5 +70,5 @@
 </body>
 
 <script src="js/common.js"></script>
-<script src="js/read.js"></script>
+<script src="js/crud.js"></script>
 </html>

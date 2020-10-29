@@ -1,0 +1,25 @@
+.file-upload-label {
+  cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  text-align: center !important;
+}
+
+.file-upload-input {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.file-upload-span {
+  background-color: #ffdd57;
+  border-radius: 4px;
+  width: 100%;
+}
+
+
+

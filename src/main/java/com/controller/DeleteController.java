@@ -30,12 +30,10 @@ public class DeleteController {
 
 	}
 
-	
+	//@CrossOrigin
 	@PostMapping("/delete-record")
 	public ModelAndView delete(User user) {
 		
-		System.out.println(user);
-
 		List<User> userList = deleteProxy.deleteById(user);
 
 		return new ModelAndView("delete", "userList", userList);

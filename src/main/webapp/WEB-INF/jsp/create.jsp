@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="css/button.css">
 	<link rel="stylesheet" href="css/checkbox-radiobtn.css">
 	<link rel="stylesheet" href="css/container.css">
+	<link rel="stylesheet" href="css/file-upload.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/form.css">
@@ -57,7 +58,7 @@
 	<div id="main">
 
 		<article>
-			<form id="createForm" action="create-user" method="POST">
+			<form id="createForm" action="create-user" method="POST" enctype="multipart/form-data">
 				<label for="textbox-id">Name</label>
 				<input type="text" id="textbox-id" name="name" placeholder="Please enter the name">
 				<br><br>
@@ -96,6 +97,11 @@
 				<label for="radio2">Female</label>
 				<input type="radio" id="radio3" name="gender" value="Neutral" />
 				<label for="radio3">Neutral</label>
+				<br><br>
+				<label class="file-upload-label">
+				  <input class="file-upload-input" type="file" name="file">
+				  <span class="file-upload-span">Upload Photo</span>
+				</label>
 				<br><br>
 				<button type="reset" value="Reset" class="half-btn">Reset</button>
 				<button type="submit" value="Submit" class="half-btn">Submit</button>

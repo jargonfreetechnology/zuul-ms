@@ -24,3 +24,9 @@ tr:nth-child(even) {
 .no-cursor {
    cursor: none !important;
 }
+
+.img-height {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}

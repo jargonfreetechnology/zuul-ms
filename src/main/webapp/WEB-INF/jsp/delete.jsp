@@ -67,6 +67,7 @@
 							<th>Hobbies</th>
 							<th>Languages</th>
 							<th>Gender</th>
+							<th>Photo</th>
 						</tr>
 						<c:forEach items="${userList}" var="user" varStatus="row">
 							<tr id="row_${row.count}" onclick="showDelConfirm('${user.userId}');">
@@ -76,6 +77,7 @@
 								<td class="medium-font">${user.hobbies}</td>
 								<td class="medium-font">${user.languages}</td>
 								<td class="medium-font">${user.gender}</td>
+								<td class="medium-font, no-cursor" > <img class="img-height" src="data:image/jpeg;base64,${user.base64EncodedImg}"/> </td>
 							</tr>
 						</c:forEach>
 					</table>

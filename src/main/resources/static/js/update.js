@@ -13,7 +13,7 @@ function clearSelected() {
     }
 }
 
-function showUserUpdateDlg(userId, name, address, diet, hobbies, languages, gender) {
+function showUserUpdateDlg(userId, name, address, diet, hobbies, languages, gender, base64EncodedImg) {
 	
 	addSoftMask("Edit");
 	clearSelected();
@@ -61,7 +61,11 @@ function showUserUpdateDlg(userId, name, address, diet, hobbies, languages, gend
 	}		
 	if(gender == 'Neutral') {
 		document.getElementById("radio3").checked = true;	
-	}			
+	}
+	
+	var str="data:image/jpeg;base64," + base64EncodedImg;
+	
+	$(".templateImg").attr("src", str);
 	
 	$(".user-update-dlg").show();
 

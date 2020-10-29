@@ -4,12 +4,10 @@ import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.domain.User;
-import com.properties.ZuulDevProperties;
 
-@FeignClient(name = "delete-ms", url = "${url.delete}", configuration = ZuulDevProperties.class)
+@FeignClient(name = "delete-ms")
 public interface DeleteProxy {
 
 	@PostMapping("/delete")
